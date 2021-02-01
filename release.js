@@ -27,7 +27,11 @@ fs.readFile('./out.txt', 'utf8', function (err, data) {
                 jira.findIssue(task)
                     .then(function (issue) {
                         if (issue.fields.fixVersions.length) {
-                            console.error(`Task ${task} already has version`);
+                            if(issue.fields.fixVersions[0].name != version.name) {
+                                console.error(`VERSION IN TASK ${task} DOESN'T EQUAL TO SPECIFIED. CURRENT VERSION: ${task.fields.fixVersions[0].name}`)
+                            } else {
+                                console.log(`Task ${task} already has specified version`);
+                            }
                             return;
                         }
                         jira.updateIssue(task, {update: {fixVersions: [{set: [{name: version.name}]}]}}).then(() => console.log(`Task ${task} updated`)).catch(err => console.log(err));
