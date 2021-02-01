@@ -1,0 +1,8 @@
+yarn.lock
+*.log
+*.err
+.idea
+*.iml
+node_modules
+in.txt
+out.txt
