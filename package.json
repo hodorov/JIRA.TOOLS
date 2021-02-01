@@ -1,0 +1,11 @@
+{
+  "name": "JIRA.TOOLS",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:hodorov/JIRA.TOOLS.git",
+  "author": "el1191 <el1191@woyd.ru>",
+  "license": "MIT",
+  "dependencies": {
+    "jira-client": "^6.21.1"
+  }
+}
